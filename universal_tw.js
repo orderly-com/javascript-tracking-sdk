@@ -159,12 +159,12 @@ typeof window?window:this);
   var CDP = function() {};
 
   // init
-  CDP.create = function(teamid,dsid,uid){
+  CDP.create = function(teamid,dsid){
   	this.host = 'https://ezorderly.com';
   	this.api_v = 'v1';
     this.teamid = teamdid;
     this.dsid = dsid;
-    this.uid   = uid;  // ='' if domain userId doesn't exist
+    this.uid   = getCookie('uid') || '';
     this.uuid  = getCookie('cdp_uuid') || '';
     this.tags  = '';
     var loc = window.location ;
